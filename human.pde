@@ -1,11 +1,11 @@
-class human {
+class human1 {
   int country;
   int strength;
   int colour;
   int research;
   boolean alive;
   
-  human(int tcolour, int tstrength, int tresearch){
+  human1(int tcolour, int tstrength, int tresearch){
     colour = tcolour;
     strength = tstrength;
     research = tresearch;

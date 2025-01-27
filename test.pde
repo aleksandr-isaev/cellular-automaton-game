@@ -1,5 +1,5 @@
-human[][] grid;
-human[][] next;
+human1[][] grid;
+human1[][] next;
 
 int cols;
 int rows;
@@ -28,11 +28,11 @@ void setup() {
   rows = height / resolution;
 
   terrain = new int [cols][rows];
-  grid = new human[cols][rows];
+  grid = new human1[cols][rows];
   
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
-      grid[i][j] = new human(0, 1, 0);
+      grid[i][j] = new human1(0, 1, 0);
       grid[i][j].kill();
       terrain[50][j] = 1;
       //terrain[i][40] = 1;
@@ -46,10 +46,10 @@ void setup() {
   //terrain[51][40] = 0;
   //water();
   
-  grid[spawn()[0]][spawn()[1]] = new human(1, (int)Math.ceil(random(5)), 0);
-  grid[spawn()[0]][spawn()[1]] = new human(2, (int)Math.ceil(random(5)), 0);
-  grid[spawn()[0]][spawn()[1]] = new human(3, (int)Math.ceil(random(5)), 0);
-  grid[spawn()[0]][spawn()[1]] = new human(4, (int)Math.ceil(random(5)), 0);
+  grid[spawn()[0]][spawn()[1]] = new human1(1, (int)Math.ceil(random(5)), 0);
+  grid[spawn()[0]][spawn()[1]] = new human1(2, (int)Math.ceil(random(5)), 0);
+  grid[spawn()[0]][spawn()[1]] = new human1(3, (int)Math.ceil(random(5)), 0);
+  grid[spawn()[0]][spawn()[1]] = new human1(4, (int)Math.ceil(random(5)), 0);
 
 }
 
@@ -153,10 +153,10 @@ void draw() {
     }
   }
 
-  next = new human[cols][rows];
+  next = new human1[cols][rows];
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
-      next[i][j] = new human(0, 1, 0);
+      next[i][j] = new human1(0, 1, 0);
       next[i][j].kill();
     }
   }
@@ -272,7 +272,7 @@ public void keyPressed() {
   }
 }
 
-boolean battle(human attacker, human deffender){
+boolean battle(human1 attacker, human1 deffender){
   boolean result = false;
   if (attacker.getStrength() >= deffender.getStrength()){
     result = true;
